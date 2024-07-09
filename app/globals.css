@@ -31,3 +31,16 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Custom Animations */
+
+
+/* Clip Path for Circular Shape */
+.clip-circle {
+  clip-path: circle(50%);
+}
+
+/* Radial Gradient Background */
+.bg-gradient-radial {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9), black);
+}
