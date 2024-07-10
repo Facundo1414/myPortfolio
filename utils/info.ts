@@ -30,7 +30,6 @@ let info = {
         ]
     },
     skillsUse: [
-        { name: 'aws' },
         { name: 'bootstrap' },
         { name: 'css' },
         { name: 'docker' },

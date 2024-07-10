@@ -1,62 +1,54 @@
 import React from 'react';
-import { WobbleCard } from './ui/WobbleCard';
 import Image from 'next/image';
 import info from "../utils/info";
+import { BentoGrid, BentoGridItem } from './ui/Bento-grid';
 
 const AboutMe = () => {
   const { mainText, title } = info.aboutme;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full px-4 lg:px-0">
-      {/* Primera card ocupando toda la fila en pantallas grandes */}
-      <WobbleCard containerClassName="lg:col-span-3">
-        <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-          {title}
-        </h2>
-        <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-          <span className="text-highlight">¡Hola! Soy Facundo Allende</span>{mainText}
-        </p>
-      </WobbleCard>
-
-      {/* Segunda card */}
-      <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]">
-        <div className="max-w-xs">
-          <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-            Gippity AI powers the entire universe
-          </h2>
-          <p className="mt-4 text-left text-base/6 text-neutral-200">
-            With over 100,000 monthly active bot users, Gippity AI is the most popular AI platform for developers.
-          </p>
-        </div>
-        <Image
-          src="/linear.webp"
-          width={500}
-          height={500}
-          alt="linear demo image"
-          className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
+    <div className="max-w-7xl mx-auto px-4 lg:px-0">
+      <BentoGrid className="grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Primer BentoGridItem, ocupando la primera fila completa */}
+        <BentoGridItem
+          className="md:col-span-2"
+          title={title}
+          description={
+            <>
+              <span className="text-highlight">¡Hola! Soy Facundo Allende</span>
+              {mainText}
+            </>
+          }
         />
-      </WobbleCard>
 
-      {/* Tercera card */}
-      <WobbleCard
-        containerClassName="col-span-1 lg:col-span-1 h-full bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]"
-      >
-        <div className="max-w-sm">
-          <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-            Signup for blazing-fast cutting-edge state of the art Gippity AI wrapper today!
-          </h2>
-          <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-            With over 100,000 monthly active bot users, Gippity AI is the most popular AI platform for developers.
-          </p>
-        </div>
-        <Image
-          src="/linear.webp"
-          width={500}
-          height={500}
-          alt="linear demo image"
-          className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
-        />
-      </WobbleCard>
+        {/* Segundo BentoGridItem en la segunda fila */}
+        <BentoGridItem
+          title="Estudios"
+          description="With over 100,000 monthly active bot users, Gippity AI is the most popular AI platform for developers."
+        >
+          <Image
+            src="/linear.webp"
+            width={500}
+            height={500}
+            alt="linear demo image"
+            className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
+          />
+        </BentoGridItem>
+
+        {/* Tercer BentoGridItem en la segunda fila */}
+        <BentoGridItem
+          title="Signup for blazing-fast cutting-edge state of the art Gippity AI wrapper today!"
+          description="With over 100,000 monthly active bot users, Gippity AI is the most popular AI platform for developers."
+        >
+          <Image
+            src="/linear.webp"
+            width={500}
+            height={500}
+            alt="linear demo image"
+            className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
+          />
+        </BentoGridItem>
+      </BentoGrid>
     </div>
   );
 }
