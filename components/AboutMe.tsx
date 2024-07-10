@@ -1,17 +1,19 @@
 import React from 'react';
-import Image from 'next/image';
 import info from "../utils/info";
 import { BentoGrid, BentoGridItem } from './ui/Bento-grid';
+import { TimelineComponent } from './extra/DefaultTimeLine';
+import StudyList from './extra/StudyList';
 
 const AboutMe = () => {
-  const { mainText, title } = info.aboutme;
+  const { mainText, title, educacion, englishL, spanishL, subtitle } = info.aboutme;
 
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-0">
-      <BentoGrid className="grid-cols-1 md:grid-cols-2 gap-4">
+      <BentoGrid className="grid-cols-1 md:grid-cols-6 gap-4">
         {/* Primer BentoGridItem, ocupando la primera fila completa */}
         <BentoGridItem
-          className="md:col-span-2"
+          sectionType={1}
+          className="md:col-span-6"
           title={title}
           description={
             <>
@@ -21,32 +23,26 @@ const AboutMe = () => {
           }
         />
 
-        {/* Segundo BentoGridItem en la segunda fila */}
+        {/* Segundo BentoGridItem en la segunda fila, ocupando 2/3 */}
         <BentoGridItem
+          sectionType={2}
+          className="md:col-span-4"
           title="Estudios"
-          description="With over 100,000 monthly active bot users, Gippity AI is the most popular AI platform for developers."
+          description={
+            <>
+              <StudyList/> 
+            </>
+          }
         >
-          <Image
-            src="/linear.webp"
-            width={500}
-            height={500}
-            alt="linear demo image"
-            className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
-          />
         </BentoGridItem>
 
-        {/* Tercer BentoGridItem en la segunda fila */}
+        {/* Tercer BentoGridItem en la segunda fila, ocupando 1/3 */}
         <BentoGridItem
-          title="Signup for blazing-fast cutting-edge state of the art Gippity AI wrapper today!"
-          description="With over 100,000 monthly active bot users, Gippity AI is the most popular AI platform for developers."
+          sectionType={3}
+          className="md:col-span-2"
+          title="Idiomas"
+          description={englishL}
         >
-          <Image
-            src="/linear.webp"
-            width={500}
-            height={500}
-            alt="linear demo image"
-            className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
-          />
         </BentoGridItem>
       </BentoGrid>
     </div>

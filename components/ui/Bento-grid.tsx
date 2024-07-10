@@ -1,5 +1,7 @@
 import React from 'react';
 import { cn } from "@/utils/cn";
+import CardCv from '../extra/CardCv';
+import { HoverEffect } from './HoverEffect';
 
 export const BentoGrid = ({
   className,
@@ -11,7 +13,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto",
+        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-6 gap-4 max-w-7xl mx-auto",
         className
       )}
     >
@@ -26,12 +28,14 @@ export const BentoGridItem = ({
   description,
   header,
   icon,
+  sectionType,
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
+  sectionType?: number;
 }) => {
   return (
     <div
@@ -54,7 +58,7 @@ export const BentoGridItem = ({
             backgroundSize: "30%",
           }}
         ></div>
-        <div className="p-4">
+        <div className="p-4 px-6">
           {header}
           <div className="group-hover/bento:translate-x-2 transition duration-200">
             {icon}
@@ -62,7 +66,32 @@ export const BentoGridItem = ({
               {title}
             </div>
             <div className="font-normal text-white text-lg ">
-              {description}
+              {/* Primera section */}
+              {sectionType == 1 && (
+                <div className="flex flex-col xs:flex-col md:flex-row justify-between items-center gap-8">
+                  <div className="w-full md:w-2/3">
+                    {description}
+                  </div>
+                  <div className="w-full md:w-1/3">
+                    <CardCv />
+                  </div>
+                </div>
+
+              ) }
+
+              {/* Segunda section */}
+              {sectionType == 2 && (
+                <div className="font-normal text-white text-lg" >
+                  {description}
+                </div>
+              ) }
+
+              {/* Tercera section */}
+              {sectionType == 3 && (
+                <div>
+                  {description}
+                </div>
+              ) }
             </div>
           </div>
         </div>

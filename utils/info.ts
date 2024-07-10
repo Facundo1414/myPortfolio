@@ -14,18 +14,18 @@ let info = {
         educacion: [
             {
                 institute: "Digital House",
-                subject: 'Full Stack Tech Developer',
-                when: "AGOSTO 2022 - JULIO 2024"
+                degree: 'Full Stack Tech Developer',
+                period: "AGOSTO 2022 - JULIO 2024"
             },
             {
                 institute: "Universidad Nacional De Cordoba",
-                subject: 'Curso De Ingles',
-                when: "MARZO 2021 - JUNIO 2024"
+                degree: 'Curso De Ingles',
+                period: "MARZO 2021 - JUNIO 2024"
             },
             {
                 institute: "Colegio Nuestra Senora Del Huerto",
-                subject: 'Bachiller En Ciencias Naturales',
-                when: "MARZO 2014 - DICIEMBRE 2019"
+                degree: 'Bachiller En Ciencias Naturales',
+                period: "MARZO 2014 - DICIEMBRE 2019"
             },
         ]
     },
