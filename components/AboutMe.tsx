@@ -16,7 +16,7 @@ const AboutMe = () => {
         {/* Primer BentoGridItem, ocupando la primera fila completa */}
         <BentoGridItem
           sectionType={1}
-          className="md:col-span-6"
+          className="col-span-6"
           title={title}
           description={
             <>
@@ -29,7 +29,7 @@ const AboutMe = () => {
         {/* Segundo BentoGridItem en la segunda fila, ocupando 2/3 */}
         <BentoGridItem
           sectionType={2}
-          className="md:col-span-4"
+          className="col-span-6 lg:col-span-4"
           title="Estudios"
           description={
             <>
@@ -42,7 +42,7 @@ const AboutMe = () => {
         {/* Tercer BentoGridItem en la segunda fila, ocupando 1/3 */}
         <BentoGridItem
           sectionType={3}
-          className="md:col-span-2"
+          className="col-span-6 lg:col-span-2"
           title="Idiomas"
           description={
             <div className="space-y-2 mt-10 flex flex-col justify-between">
