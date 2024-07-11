@@ -25,7 +25,8 @@ const Skills = () => {
             <InfiniteMovingCards
               items={techsIUse}
               direction="right"
-              speed="normal"
+              speed="slow"
+              
             />
           </div>
 
