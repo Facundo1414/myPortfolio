@@ -2,6 +2,7 @@ import React from 'react';
 import { cn } from "@/utils/cn";
 import CardCv from '../extra/CardCv';
 import { HoverEffect } from './HoverEffect';
+import { SparklesCore } from './SparklesCore';
 
 export const BentoGrid = ({
   className,
@@ -13,7 +14,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-6 gap-4 max-w-7xl mx-auto",
+        "grid md:auto-rows-[23rem] grid-cols-1 md:grid-cols-6 gap-4 max-w-7xl mx-auto",
         className
       )}
     >
@@ -88,7 +89,7 @@ export const BentoGridItem = ({
 
               {/* Tercera section */}
               {sectionType == 3 && (
-                <div>
+              <div className="relative">
                   {description}
                 </div>
               ) }

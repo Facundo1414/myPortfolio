@@ -7,7 +7,7 @@ let info = {
     },
     aboutme: {
         title: "Sobre mi",
-        mainText: ", un apasionado desarrollador web. Me especializo en el backend y frontend, siendo un desarrollador FullStack. Mi pasión por la creación y la resolución de problemas me motiva a buscar continuamente nuevas oportunidades de aprendizaje y crecimiento. Con sólidos conocimientos en tecnologías web, estoy listo para enfrentar cualquier desafío. ¡Espero construir algo grandioso juntos!",
+        mainText: ", un apasionado desarrollador web. Me especializo en el backend y frontend, siendo un desarrollador FullStack. Mi interes por la resolución de problemas me motiva a buscar continuamente nuevas oportunidades de aprendizaje y crecimiento. Con sólidos conocimientos en tecnologías web, estoy listo para enfrentar cualquier desafío. ¡Espero construir algo grandioso juntos!",
         subtitle: "Datos Personales",
         englishL: "Ingles nivel: B2-C1",
         spanishL: "Espanol nivel: Nativo C2",

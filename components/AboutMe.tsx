@@ -1,8 +1,11 @@
 import React from 'react';
 import info from "../utils/info";
 import { BentoGrid, BentoGridItem } from './ui/Bento-grid';
-import { TimelineComponent } from './extra/DefaultTimeLine';
 import StudyList from './extra/StudyList';
+import LanguageIcon from '@mui/icons-material/Language'; // Importa el icono de idioma
+import EnglishIcon from '@mui/icons-material/Translate'; // Puedes usar cualquier icono que prefieras
+import Redes from './extra/Redes';
+import { SparklesCore } from './ui/SparklesCore';
 
 const AboutMe = () => {
   const { mainText, title, educacion, englishL, spanishL, subtitle } = info.aboutme;
@@ -41,7 +44,22 @@ const AboutMe = () => {
           sectionType={3}
           className="md:col-span-2"
           title="Idiomas"
-          description={englishL}
+          description={
+            <div className="space-y-2 mt-10 flex flex-col justify-between">
+              <div className="flex items-center ">
+                <LanguageIcon className="mr-2" />
+                <span className='text-xl'>{spanishL}</span>
+              </div>
+              <div className="flex items-center">
+                <EnglishIcon className="mr-2" />
+                <span className='text-xl'>{englishL}</span>
+              </div>
+              <div className='mb-0 flex justify-center items-end pt-28'>
+                
+                <Redes/>
+              </div>
+            </div>
+          }
         >
         </BentoGridItem>
       </BentoGrid>
