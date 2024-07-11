@@ -15,7 +15,7 @@ const Skills = () => {
 
   return (
     // Se le puede agregar un bg al div principal
-    <div className="mx-auto w-full  relative rounded-2xl overflow-hidden shadow-md">
+    <div id='skills-section' className="mx-auto w-full  relative rounded-2xl overflow-hidden shadow-md">
       <div className="relative h-full bg-gradient-to-t sm:mx-0 sm:rounded-2xl overflow-hidden">
         <div className="h-full px-4 py-20 sm:px-10">
           <h1 className="text-3xl font-bold text-center text-white mb-4">Mis Skills</h1>

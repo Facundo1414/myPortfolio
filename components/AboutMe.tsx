@@ -11,7 +11,7 @@ const AboutMe = () => {
   const { mainText, title, educacion, englishL, spanishL, subtitle } = info.aboutme;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 lg:px-0">
+    <div id='aboutme-section' className="max-w-7xl mx-auto px-4 lg:px-0">
       <BentoGrid className="grid-cols-1 md:grid-cols-6 gap-4">
         {/* Primer BentoGridItem, ocupando la primera fila completa */}
         <BentoGridItem

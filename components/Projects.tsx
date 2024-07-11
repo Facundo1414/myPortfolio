@@ -53,7 +53,7 @@ const content = [
 
 const Projects = () => {
   return (
-    <div>
+    <div id='proyectos-section'>
       <h1 className="text-3xl font-bold text-center text-white mb-4">Proyectos</h1>
       <StickyScroll content={content}/>
     </div>

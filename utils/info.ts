@@ -85,9 +85,29 @@ let info = {
         { name: 'ubuntu' },
 
     ],
-    experience: {
 
-    }
+    navItems : [
+        {
+          name: "Home",
+          link: "/",
+        },
+        {
+          name: "Sobre mi",
+          link: "#aboutme-section",
+        },
+        {
+          name: "Skills",
+          link: "#skills-section",
+        },
+        {
+          name: "Proyectos",
+          link: "#proyectos-section",
+        },
+        {
+          name: "Contacto",
+          link: "#contact-section",
+        }
+      ]
 }
 
 export default info;
