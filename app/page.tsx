@@ -12,7 +12,7 @@ export default function Home() {
   const {navItems} = info
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="dark-mode relative min-h-screen overflow-hidden">
       <main className="relative z-10 flex flex-col items-center justify-between gap-14 min-h-screen">
         <Hero />
         <FloatingNav navItems={navItems} />
