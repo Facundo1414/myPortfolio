@@ -9,8 +9,8 @@ let info = {
         title: "Sobre mi",
         mainText: ", un apasionado desarrollador web. Me especializo en el backend y frontend, siendo un desarrollador FullStack. Mi interes por la resolución de problemas me motiva a buscar continuamente nuevas oportunidades de aprendizaje y crecimiento. Con sólidos conocimientos en tecnologías web, estoy listo para enfrentar cualquier desafío. ¡Espero construir algo grandioso juntos!",
         subtitle: "Datos Personales",
-        englishL: "Ingles nivel: B2-C1",
-        spanishL: "Espanol nivel: Nativo C2",
+        englishL: "Ingles - nivel: B2-C1",
+        spanishL: "Español - nivel: Nativo C2",
         educacion: [
             {
                 institute: "Digital House",
