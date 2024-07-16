@@ -7,6 +7,8 @@ import Skills from "@/components/Skills";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { SparklesCore } from "@/components/ui/SparklesCore";
 import info  from "../utils/info"; // Asegúrate de tener la ruta correcta para tu archivo info.js
+import Proyectos2 from "@/components/ui/Proyectos2";
+
 
 export default function Home() {
   const {navItems} = info
@@ -19,6 +21,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-between gap-14">
           <AboutMe />
           <Skills />
+          <Proyectos2/>
           <Projects />
           <Contact />
         </div>
