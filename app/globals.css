@@ -48,3 +48,11 @@ body {
 .text-highlight {
   color: #FFD700; /* Color dorado como ejemplo */
 }
+
+/* styles/globals.css */
+
+.dark-mode {
+  background-color: #000000; /* Ejemplo de fondo oscuro */
+  color: #fff; /* Ejemplo de texto blanco */
+  /* Añade más estilos según tu diseño */
+}

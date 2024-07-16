@@ -1,11 +1,20 @@
-'use client';
-import React, { useRef, useState } from 'react';
+"use client"
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+import SocialCard from './SocialCard';
 
 const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
   const [submitMessage, setSubmitMessage] = useState<string>('');
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [sendingMessage, setSendingMessage] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (formSubmitted) {
+      // Mostrar mensaje de éxito cuando se envía el formulario
+      setSubmitMessage('¡El envío del formulario fue exitoso!');
+    }
+  }, [formSubmitted]);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -14,9 +23,16 @@ const ContactForm = () => {
     const userId = process.env.REACT_APP_USER_ID || 'gQFCgGSPgXBUPaknW';
 
     if (form.current) {
-      // Validar campos requeridos
       if (!form.current.checkValidity()) {
         return;
+      }
+
+      setSendingMessage(true);
+
+      // Cambiar el texto del botón y deshabilitarlo durante el envío
+      const submitButton = form.current.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.innerHTML = 'Enviando...';
       }
 
       emailjs
@@ -26,70 +42,73 @@ const ContactForm = () => {
             console.log('SUCCESS!', result.text);
             setSubmitMessage('¡El envío del formulario fue exitoso!');
             setFormSubmitted(true);
-            if (form.current) {
-              form.current.reset();
-            }
           },
           (error) => {
             console.error('FAILED...', error.text);
             setSubmitMessage('¡Ups! Algo salió mal.');
           }
-        );
+        )
+        .finally(() => {
+          setSendingMessage(false);
+
+          // Restaurar el texto y habilitar el botón después del envío
+          if (submitButton) {
+            submitButton.innerHTML = 'Enviar email';
+          }
+        });
     } else {
       console.error('Form reference is null.');
     }
   };
 
   return (
-    <div className='ContactForm min-w-full max-w-3xl mx-auto p-4'>
+    <div className="ContactForm min-w-full max-w-3xl mx-auto p-4">
       <h1 className="text-3xl font-bold text-center text-white mb-8">Contactame</h1>
       {!formSubmitted && (
-        <form ref={form} onSubmit={sendEmail} noValidate className='space-y-4'>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-            <div>
+        <div className="w-[400px] bg-[linear-gradient(#212121,#212121)_padding-box,linear-gradient(145deg,transparent_35%,#e81cff,#40c9ff)_border-box] border-2 border-transparent p-8 text-sm font-inherit text-white flex flex-col gap-5 box-border rounded-xl mx-auto">
+          <form ref={form} onSubmit={sendEmail} noValidate className="flex flex-col gap-5">
+            <div className="flex flex-col gap-1">
+              <label htmlFor="email" className="block mb-1 text- font-semibold text-base text-white">
+                Tu Email
+              </label>
               <input
-                type='text'
-                name='user_name'
+                type="email"
+                id="email"
+                name="user_email"
                 required
-                maxLength={30}
-                className='w-full p-2 border border-gray-400 rounded bg-gray-200 text-black'
-                placeholder='Name'
+                className="w-full p-3.5 rounded-lg text-white bg-transparent border border-[#414141] focus:outline-none focus:border-[#e81cff] placeholder-opacity-50"
+                placeholder="tuEmail@gmail.com"
               />
             </div>
-            <div>
-              <input
-                type='email'
-                name='user_email'
+            <div className="flex flex-col gap-1">
+              <label htmlFor="textarea" className="block mb-1 font-semibold text-base text-white">
+                Tu mensaje
+              </label>
+              <textarea
+                name="message"
+                id="textarea"
+                rows={10}
                 required
-                className='w-full p-2 border border-gray-400 rounded bg-gray-200 text-black'
-                placeholder='Email address'
+                className="w-full p-3.5 rounded-lg resize-none text-white h-24 border border-[#414141] bg-transparent focus:outline-none focus:border-[#e81cff] font-inherit"
+                placeholder="Hola! Mi nombre es..."
               />
             </div>
-          </div>
-          <div>
-            <textarea
-              name='message'
-              required
-              rows={3}
-              className='w-full p-2 border border-gray-400 rounded bg-gray-200 text-black'
-              placeholder='Message'
-            />
-          </div>
-          <div className='flex justify-center'>
-            <button
-              type='submit'
-              className='relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50'
-            >
-              <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]' />
-              <span className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl'>
+            <div className="flex justify-center relative">
+              <button
+                type="submit"
+                className="flex items-center justify-center self-start font-inherit text-white font-semibold w-2/5 bg-indigo-900 border border-[#414141] p-3.5 text-sm gap-2 mt-2 cursor-pointer rounded-md transition-transform transform active:scale-95 hover:bg-indigo-800 hover:border-white"
+                disabled={sendingMessage}
+              >
                 Enviar email
-              </span>
-            </button>
-          </div>
-        </form>
+              </button>
+            </div>
+          </form>
+        </div>
       )}
-      {submitMessage && (
-        <div className='text-center mt-4 text-white'>{submitMessage}</div>
+      {formSubmitted && (
+        <div className="mt-4">
+          <SocialCard submitMessage={submitMessage} />
+        </div>
       )}
     </div>
   );
