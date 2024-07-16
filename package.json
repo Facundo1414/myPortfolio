@@ -10,6 +10,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.16.1",
+    "@mui/material": "^5.16.1",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@tabler/icons-react": "^3.10.0",
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
@@ -24,6 +29,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
     "skill-icons": "github:tandpfun/skill-icons",
+    "styled-components": "^6.1.11",
     "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
