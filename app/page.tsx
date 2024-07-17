@@ -9,7 +9,7 @@ import Skills from '@/components/Skills';
 import { FloatingNav } from '@/components/ui/FloatingNavbar';
 import { SparklesCore } from '@/components/ui/SparklesCore';
 import info from '../utils/info';
-import BackToTopButton from '../components/extra/BackToTopButton'; // Importa el componente BackToTopButton
+import BackToTopButton from '../components/extra/BackToTopButton'; 
 
 const Home = () => {
   const { navItems } = info;
@@ -27,7 +27,7 @@ const Home = () => {
           <Contact />
         </div>
         <Footer />
-        <BackToTopButton /> {/* Coloca el botón BackToTopButton al final del contenido principal */}
+        <BackToTopButton /> 
       </main>
       <SparklesCore className="absolute inset-0 z-0" background="transparent" particleSize={0.2} particleDensity={10} />
     </div>
