@@ -18,7 +18,7 @@ const CardCv = () => {
   };
 
   return (
-    <div className="relative duration-300  hover:-rotate-0  -rotate-12 group border border-indigo-900 border-4  overflow-hidden rounded-2xl relative h-52 w-72 bg-black p-5 flex flex-col items-start gap-4">
+    <div className=" duration-300  hover:-rotate-0  -rotate-12 group  border-indigo-900 border-4  overflow-hidden rounded-2xl relative h-52 w-72 bg-black p-5 flex flex-col items-start gap-4">
       <div className="text-gray-50">
         <span className="font-bold text-5xl">Jr</span>
         <p className="text-xs">FullStack Developer</p>
