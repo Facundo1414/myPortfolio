@@ -44,10 +44,10 @@ const CardProyectComponent: React.FC<CardProyectComponentProps> = ({ title, desc
             />
           </CardItem>
           <div className="flex flex-col sm:flex-row justify-between items-center mt-8 space-y-4 sm:space-y-0">
-            <CardItem translateZ={20} as="button" onClick={handleModalOpen} className="px-4 py-2 rounded-xl text-xs font-normal bg-indigo-600 text-white">
+            <CardItem translateZ={20} as="button" onClick={handleModalOpen} className="px-4 py-2 rounded-xl text-sm  bg-white text-black font-semibold">
               Ver detalle
             </CardItem>
-            <CardItem translateZ={20} as={Link} href={linkUrl} target="__blank" className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold">
+            <CardItem translateZ={20} as={Link} href={linkUrl} target="__blank" className="px-4 py-2 rounded-xl bg-indigo-600 dark:bg-white dark:text-black text-white text-sm font-bold">
               DEMO
             </CardItem>
           </div>

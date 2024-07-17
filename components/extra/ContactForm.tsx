@@ -96,7 +96,7 @@ const ContactForm = () => {
             <div className="flex justify-center relative">
               <button
                 type="submit"
-                className="flex items-center justify-center self-start font-inherit text-white font-semibold w-2/5 bg-indigo-900 border border-[#414141] p-3.5 text-sm gap-2 mt-2 cursor-pointer rounded-md transition-transform transform active:scale-95 hover:bg-indigo-800 hover:border-white"
+                className="flex items-center justify-center self-start font-inherit text-white font-semibold w-2/5 bg-indigo-600 border border-[#414141] p-3.5 text-sm gap-2 mt-2 cursor-pointer rounded-md transition-transform transform active:scale-95 hover:bg-indigo-800 hover:border-white"
                 disabled={sendingMessage}
               >
                 Enviar email
