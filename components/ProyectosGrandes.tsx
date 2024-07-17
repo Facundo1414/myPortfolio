@@ -1,8 +1,8 @@
 "use client";
 
 import React from 'react';
-import info from '../../utils/info'
-import CardProyectComponent from '../extra/CardProyectComponent';
+import info from '../utils/info'
+import CardProyectComponent from './extra/CardProyectComponent';
 
 export const ThreeDCardDemoP: React.FC = () => {
   const { title, description, extraDetail, demo, imageUrl, projectImages } = info.proyectos.rentstudio;
