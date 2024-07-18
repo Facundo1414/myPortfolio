@@ -63,7 +63,7 @@ const ContactForm = () => {
 
   return (
     <div className="ContactForm min-w-full max-w-3xl mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center text-white mb-8">Contactame</h1>
+      <h1 className="text-3xl font-bold text-center text-white">Contactame</h1>
       {!formSubmitted && (
         <div className="w-[400px] bg-[linear-gradient(#212121,#212121)_padding-box,linear-gradient(145deg,transparent_35%,#e81cff,#40c9ff)_border-box] border-2 border-transparent p-8 text-sm font-inherit text-white flex flex-col gap-5 box-border rounded-xl mx-auto">
           <form ref={form} onSubmit={sendEmail} noValidate className="flex flex-col gap-5">
