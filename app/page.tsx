@@ -1,17 +1,18 @@
-import AboutMe from "@/components/AboutMe";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
-import { SparklesCore } from "@/components/ui/SparklesCore";
-import info  from "../utils/info"; // Asegúrate de tener la ruta correcta para tu archivo info.js
-import Proyectos2 from "@/components/ui/Proyectos2";
+import React from 'react';
+import AboutMe from '@/components/AboutMe';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
+import ProyectosGrandes from '@/components/ProyectosGrandes';
+import Skills from '@/components/Skills';
+import { FloatingNav } from '@/components/ui/FloatingNavbar';
+import { SparklesCore } from '@/components/ui/SparklesCore';
+import info from '../utils/info';
+import BackToTopButton from '../components/extra/BackToTopButton'; 
 
-
-export default function Home() {
-  const {navItems} = info
+const Home = () => {
+  const { navItems } = info;
 
   return (
     <div className="dark-mode relative min-h-screen overflow-hidden">
@@ -21,13 +22,16 @@ export default function Home() {
         <div className="flex flex-col items-center justify-between gap-14">
           <AboutMe />
           <Skills />
-          <Proyectos2/>
+          <ProyectosGrandes />
           <Projects />
           <Contact />
         </div>
         <Footer />
+        <BackToTopButton /> 
       </main>
-      <SparklesCore className="absolute inset-0 z-0" background="transparent" particleSize={0.2} particleDensity={10}/>
+      <SparklesCore className="absolute inset-0 z-0" background="transparent" particleSize={0.2} particleDensity={10} />
     </div>
   );
-}
+};
+
+export default Home;
