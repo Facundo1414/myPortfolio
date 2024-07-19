@@ -1,24 +1,27 @@
 "use client";
 
 import React from 'react';
-import info from '../utils/info'
+import info from '../utils/info';
 import CardProyectComponent from './extra/CardProyectComponent';
 
 export const ThreeDCardDemoP: React.FC = () => {
-  const { title, description, extraDetail, demo, imageUrl, projectImages } = info.proyectos.rentstudio;
+  const projects = [info.proyectos.rentstudio, info.proyectos.ncwinds];
 
   return (
     <div id='proyectos-section'>
       <h1 className="text-3xl font-bold text-center text-white mb-[-2rem]">Proyectos</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-[-4rem]">
-        <CardProyectComponent
-          title={title}
-          description={description}
-          imageUrl={imageUrl}
-          linkUrl={demo}
-          projectImages={projectImages}
-          extraDetail={extraDetail}
-        />
+        {projects.map((project, index) => (
+          <CardProyectComponent
+            key={index}
+            title={project.title}
+            description={project.description}
+            imageUrl={project.imageUrl}
+            linkUrl={project.demo}
+            projectImages={project.projectImages}
+            extraDetail={project.extraDetail}
+          />
+        ))}
       </div>
     </div>
   );

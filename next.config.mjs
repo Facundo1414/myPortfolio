@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { reactStrictMode: true,
-    images: {
-      domains: ['images.unsplash.com'], // Añade el dominio permitido aquí};
-    },
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 };
+
 export default nextConfig;

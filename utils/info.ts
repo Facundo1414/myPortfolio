@@ -127,14 +127,15 @@ let info = {
     ncwinds:{
       title: "NC Winds",
       description: "Booking de vuelos internacionales",
-      extraDetail: "El proyecto se llevó a cabo utilizando la metodología SCRUM a lo largo de 4 sprints, con una duración de 7 días cada uno. La aplicación fue desarrollada principalmente con Spring Boot en Java, ReactJS y Tailwind CSS, además de integrar bibliotecas como MUI. Mi rol en este proyecto fue de FrontEnd Developer y Scrum Master. Lideré al equipo, asegurando que cada miembro alcanzara su máximo potencial y que las tareas se organizaran eficientemente dentro del tiempo disponible.",
-      demo: "https://dh.jackmoon.dev",
-      imageUrl: "/images/DH/logoRS.png",
+      extraDetail: "El proyecto se llevó a cabo utilizando la metodología SCRUM a lo largo de 4 sprints, con una duración de 7 días cada uno. La aplicación fue desarrollada principalmente con Spring Boot en Java y ReactJS, además de integrar bibliotecas como MUI. Mi rol en este proyecto fue de FrontEnd Developer y Scrum Master. Lideré al equipo, asegurando que cada miembro alcanzara su máximo potencial y que las tareas se organizaran eficientemente dentro del tiempo disponible.",
+      demo: "https://ncwindsfrontend-8acewi861-facundo1414s-projects.vercel.app",
+      imageUrl: "/images/NC/miniatura.png",
       projectImages: [
-        "/images/DH/homeRS.png",
-        "/images/DH/nuevoProductoRS.png",
-        "/images/DH/adminDbRS.png",
-        "/images/DH/reservaRS.png",
+        "/images/NC/homeNCW.png",
+        "/images/NC/worldNCW.png",
+        "/images/NC/loginNCW.png",
+        "/images/NC/searchNCW.png",
+        "/images/NC/seatsNCW.png",
       ]
     },
   }
