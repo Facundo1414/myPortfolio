@@ -4,48 +4,34 @@ import Image from 'next/image';
 
 const content = [
   {
-    title: "Collaborative Editing",
+    title: "Reservas de canchas de futbol",
     description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+      "Este proyecto se enfoca en la gestión de canchas de fútbol en la ciudad de Córdoba. Actualmente, las reservas se realizan a través de WhatsApp. El objetivo es proporcionar una plataforma que permita a los clientes y a los propietarios de las canchas gestionar sus reservas de manera más eficiente.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
-          src="/linear.webp"
+      <div className="h-full w-full flex items-center justify-center">
+        <Image 
+          src="/images/proyectos/canchaReserva.avif" 
+          alt="cancha"
           width={300}
           height={300}
-          className="h-full w-full object-cover"
-          alt="linear board demo"
-        />
+          className="h-full w-full object-cover" 
+          />
       </div>
     ),
   },
   {
-    title: "Version control",
+    title: "Aguas Cordobesas",
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      "El proyecto consiste en una aplicación para gestionar las deudas de los clientes. La aplicación toma datos cargados desde archivos Excel y utiliza web scraping para obtener las deudas de los clientes desde la página oficial de Aguas Cordobesas. Esta página proporciona un archivo de pago, que los empleados utilizan para enviárselo a los clientes. De esta manera, se agiliza el método tradicional de visitar a los clientes casa por casa.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
-    ),
-  },
-  {
-    title: "Running out of content",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
+      <div className="h-full w-full flex items-center justify-center">
+        <Image 
+          src="/images/proyectos/aguasCba.png" 
+          alt="aguas"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover" 
+          />
       </div>
     ),
   },
@@ -54,7 +40,7 @@ const content = [
 const Projects = () => {
   return (
     <div >
-      <h1 className="text-3xl font-bold text-center text-white mb-8">Proyectos Pequeños</h1>
+      <h1 className="text-3xl font-bold text-center text-white mb-8">Proyectos en Progreso</h1>
       <StickyScroll content={content}/>
     </div>
   )
