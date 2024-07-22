@@ -9,8 +9,8 @@ export const ThreeDCardDemoP: React.FC = () => {
 
   return (
     <div id='proyectos-section'>
-      <h1 className="text-3xl font-bold text-center text-white mb-[-2rem]">Proyectos</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-[-4rem]">
+      <h1 className="text-3xl font-bold text-center text-white mb-4 ">Proyectos</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-0 mt-[-4rem] sm:mt-0">
         {projects.map((project, index) => (
           <CardProyectComponent
             key={index}
