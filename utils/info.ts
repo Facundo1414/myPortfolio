@@ -23,9 +23,9 @@ let info = {
               period: "MARZO 2021 - JUNIO 2024"
           },
           {
-              institute: "Colegio Nuestra Senora Del Huerto",
-              degree: 'Bachiller En Ciencias Naturales',
-              period: "MARZO 2014 - DICIEMBRE 2019"
+              institute: "UTN",
+              degree: 'Ingenieria En Sistemas De Informacion',
+              period: "MARZO 2020 - JUNIO 2022"
           },
       ]
   },
@@ -128,7 +128,7 @@ let info = {
       title: "NC Winds",
       description: "Booking de vuelos internacionales",
       extraDetail: "El proyecto se llevó a cabo utilizando la metodología SCRUM a lo largo de 4 sprints, con una duración de 7 días cada uno. La aplicación fue desarrollada principalmente con Spring Boot en Java y ReactJS, además de integrar bibliotecas como MUI. Mi rol en este proyecto fue de FrontEnd Developer y Scrum Master. Lideré al equipo, asegurando que cada miembro alcanzara su máximo potencial y que las tareas se organizaran eficientemente dentro del tiempo disponible.",
-      demo: "https://ncwindsfrontend-8acewi861-facundo1414s-projects.vercel.app",
+      demo: "https://ncwindsfrontend.vercel.app",
       imageUrl: "/images/NC/miniatura.png",
       projectImages: [
         "/images/NC/homeNCW.png",
