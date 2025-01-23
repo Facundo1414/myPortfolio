@@ -114,7 +114,7 @@ let info = {
       title: "Rent Studio",
       description: "App para renta de servicios y equipos fotograficos",
       extraDetail: "El proyecto se llevó a cabo utilizando la metodología SCRUM a lo largo de 4 sprints, con una duración de 14 días cada uno. La aplicación fue desarrollada principalmente con Spring Boot en Java, ReactJS y Tailwind CSS, además de integrar bibliotecas como MUI. Mi rol en este proyecto fue de Fullstack Developer y Scrum Master. Lideré al equipo, asegurando que cada miembro alcanzara su máximo potencial y que las tareas se organizaran eficientemente dentro del tiempo disponible.",
-      demo: "https://dh.jackmoon.dev",
+      demo: "https://rentstudio.jackmoon.dev",
       imageUrl: "/images/DH/logoRS.png",
       github: "https://github.com/orgs/1774-ProyectoIntegrador/repositories",
       projectImages: [
