@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import info from "../utils/info";
 import { BentoGrid, BentoGridItem } from './ui/Bento-grid';
@@ -5,21 +7,23 @@ import StudyList from './extra/StudyList';
 import LanguageIcon from '@mui/icons-material/Language';
 import EnglishIcon from '@mui/icons-material/Translate';
 import Redes from './extra/Redes';
+import { AnimatedSection } from './ui/AnimatedSection';
 
 const AboutMe = () => {
   const { mainText, title, educacion, englishL, spanishL, subtitle } = info.aboutme;
 
   return (
-    <div id='aboutme-section' className="max-w-7xl mx-auto px-4 lg:px-0 w-full">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <span className="inline-block mb-3 px-4 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-indigo-300">
-          👋 Conóceme
-        </span>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          {title}
-        </h2>
-      </div>
+    <AnimatedSection className="w-full">
+      <div id='aboutme-section' className="max-w-7xl mx-auto px-4 lg:px-0 w-full">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <span className="inline-block mb-3 px-4 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-indigo-300">
+            👋 Conóceme
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            {title}
+          </h2>
+        </div>
 
       <BentoGrid className="grid-cols-1 md:grid-cols-6 gap-4">
         {/* Primer BentoGridItem, ocupando la primera fila completa */}
@@ -76,6 +80,7 @@ const AboutMe = () => {
         </BentoGridItem>
       </BentoGrid>
     </div>
+    </AnimatedSection>
   );
 }
 

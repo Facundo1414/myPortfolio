@@ -1,6 +1,9 @@
+"use client";
+
 import React from 'react';
 import info from "../utils/info";
 import { InfiniteMovingCards } from './ui/InfiniteMovingCards';
+import { AnimatedSection } from './ui/AnimatedSection';
 
 const Skills = () => {
   const techsIUse = info.skillsUse.map(skill => ({
@@ -14,7 +17,8 @@ const Skills = () => {
   }));
 
   return (
-    <div id='skills-section' className="w-full relative overflow-hidden py-16">
+    <AnimatedSection className="w-full">
+      <div id='skills-section' className="w-full relative overflow-hidden py-16">
       {/* Header */}
       <div className="flex flex-col items-center justify-center mb-12 px-4">
         <span className="inline-block mb-3 px-4 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-indigo-300">
@@ -62,6 +66,7 @@ const Skills = () => {
         </div>
       </div>
     </div>
+    </AnimatedSection>
   );
 }
 

@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import ProyectosGrandes from '@/components/ProyectosGrandes';
 import Skills from '@/components/Skills';
+import Statistics from '@/components/Statistics';
 import { FloatingNav } from '@/components/ui/FloatingNavbar';
 import { MobileNav } from '@/components/ui/MobileNav';
 import { SparklesCore } from '@/components/ui/SparklesCore';
@@ -16,7 +17,7 @@ export default function Home() {
 
   return (
     <div className="dark-mode relative min-h-screen overflow-hidden">
-      <main className="relative z-10 flex flex-col items-center justify-between min-h-screen">
+      <main id="main-content" className="relative z-10 flex flex-col items-center justify-between min-h-screen">
         <ClientLayout>
           <Hero />
           <div className="hidden md:flex">
@@ -26,6 +27,7 @@ export default function Home() {
             <MobileNav navItems={navItems} />
           </div>
           <div className="flex flex-col items-center justify-between gap-20 w-full py-16">
+            <Statistics />
             <AboutMe />
             <Skills />
             <ProyectosGrandes />

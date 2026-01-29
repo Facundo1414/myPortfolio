@@ -1,12 +1,16 @@
+"use client";
+
 import React from 'react';
 import ContactForm from './extra/ContactForm';
+import { AnimatedSection } from './ui/AnimatedSection';
 
 const Contact = () => {
   return (
-    <div
-      id="contact-section"
-      className="relative w-full max-w-4xl mx-auto px-4"
-    >
+    <AnimatedSection direction="up">
+      <div
+        id="contact-section"
+        className="relative w-full max-w-4xl mx-auto px-4"
+      >
       {/* Header */}
       <div className="text-center mb-8">
         <span className="inline-block mb-3 px-4 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-indigo-300">
@@ -75,6 +79,7 @@ const Contact = () => {
         <ContactForm />
       </div>
     </div>
+    </AnimatedSection>
   );
 };
 

@@ -54,13 +54,47 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Schema.org structured data para SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Facundo Allende",
+    "url": "https://facundoallende.dev",
+    "jobTitle": "Full Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "knowsAbout": ["TypeScript", "React", "Next.js", "Node.js", "Java", "Spring Boot", "PostgreSQL"],
+    "sameAs": [
+      "https://github.com/Facundo1414",
+      "https://www.linkedin.com/in/facundoallendedev/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Córdoba",
+      "addressCountry": "Argentina"
+    }
+  };
+
   return (
     <html lang="es">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className={`${inter.className} dark-mode`}>
+        {/* Skip to content link for accessibility */}
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-md"
+        >
+          Saltar al contenido principal
+        </a>
         <ThemeProvider>
           {children}
           <Analytics />

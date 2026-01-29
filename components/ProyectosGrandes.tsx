@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import info from '../utils/info';
 import CardProyectComponent from './extra/CardProyectComponent';
+import { AnimatedSection } from './ui/AnimatedSection';
 
 type ProjectCategory = 'destacados' | 'empresariales' | 'academicos' | 'todos';
 
@@ -48,6 +49,7 @@ export const ThreeDCardDemoP: React.FC = () => {
   ];
 
   return (
+    <AnimatedSection>
     <div id='proyectos-section' className="w-full">
       <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
         Mis Proyectos
@@ -95,6 +97,7 @@ export const ThreeDCardDemoP: React.FC = () => {
         ))}
       </div>
     </div>
+    </AnimatedSection>
   );
 }
 

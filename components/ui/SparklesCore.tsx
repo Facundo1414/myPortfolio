@@ -18,6 +18,23 @@ type ParticlesProps = {
   particleColor?: string;
   particleDensity?: number;
 };
+
+// Hook para detectar si es mobile
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  return isMobile;
+};
+
 export const SparklesCore = (props: ParticlesProps) => {
   const {
     id,
@@ -30,6 +47,11 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleDensity,
   } = props;
   const [init, setInit] = useState(false);
+  const isMobile = useIsMobile();
+  
+  // Reducir partículas en mobile para mejor rendimiento
+  const adjustedDensity = isMobile ? Math.min(particleDensity || 100, 30) : particleDensity;
+  
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -229,7 +251,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                   mode: "delete",
                   value: 0,
                 },
-                value: particleDensity || 120,
+                value: adjustedDensity || 120,
               },
               opacity: {
                 value: {
