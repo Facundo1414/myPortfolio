@@ -1,0 +1,49 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "../globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
+import { Analytics } from '@vercel/analytics/react';
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Facundo Allende - Full Stack Developer",
+  description: "Portfolio de Facundo Allende, Full Stack Developer especializado en TypeScript, React, Next.js, Java y Spring Boot. Desarrollador web con experiencia en proyectos empresariales y e-commerce.",
+  keywords: ["Full Stack Developer", "Desarrollador Web", "TypeScript", "React", "Next.js", "Java", "Spring Boot", "Córdoba", "Argentina"],
+  authors: [{ name: "Facundo Allende" }],
+  openGraph: {
+    title: "Facundo Allende - Full Stack Developer",
+    description: "Portfolio de Facundo Allende, Full Stack Developer especializado en TypeScript, React, Next.js, Java y Spring Boot.",
+    type: "website",
+    locale: "es_ES",
+  },
+};
+
+export function generateStaticParams() {
+  return [{ locale: 'es' }, { locale: 'en' }];
+}
+
+export default async function RootLayout({
+  children,
+  params
+}: Readonly<{
+  children: React.ReactNode;
+  params: {locale: string};
+}>) {
+  const messages = await getMessages({locale: params.locale});
+
+  return (
+    <html lang={params.locale}>
+      <body className={`${inter.className} dark-mode`}>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider>
+            {children}
+            <Analytics />
+          </ThemeProvider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}

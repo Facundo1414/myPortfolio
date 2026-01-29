@@ -14,30 +14,51 @@ const Skills = () => {
   }));
 
   return (
-    // Se le puede agregar un bg al div principal
-    <div id='skills-section' className="mx-auto w-full  relative rounded-2xl overflow-hidden shadow-md">
-      <div className="relative h-full bg-gradient-to-t sm:mx-0 sm:rounded-2xl overflow-hidden">
-        <div className="h-full px-4 py-20 sm:px-10">
-          <h1 className="text-3xl font-bold text-center text-white mb-4">Mis Skills</h1>
+    <div id='skills-section' className="w-full relative overflow-hidden py-16">
+      {/* Header */}
+      <div className="flex flex-col items-center justify-center mb-12 px-4">
+        <span className="inline-block mb-3 px-4 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-indigo-300">
+          🛠️ Tecnologías
+        </span>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">
+          Mi Stack Tecnológico
+        </h2>
+        <p className="text-neutral-400 max-w-lg text-center">
+          Herramientas y tecnologías que utilizo para crear soluciones digitales de alto impacto
+        </p>
+      </div>
 
-          <div className="h-[10rem] flex flex-col justify-center items-center">
-            <h2 className="text-white text-2xl font-bold mb-4 text-center ">Tecnologías que uso</h2>
-            <InfiniteMovingCards
-              items={techsIUse}
-              direction="right"
-              speed="slow"
-              
-            />
+      <div className="space-y-10">
+        {/* Tecnologías que uso */}
+        <div className="relative">
+          <div className="flex items-center justify-center gap-3 mb-6 px-4">
+            <div className="h-px w-8 md:w-12 bg-gradient-to-r from-transparent to-indigo-500"></div>
+            <h3 className="text-white text-lg md:text-xl font-semibold flex items-center gap-2 whitespace-nowrap">
+              <span className="text-xl md:text-2xl">⚡</span> Uso Frecuente
+            </h3>
+            <div className="h-px w-8 md:w-12 bg-gradient-to-l from-transparent to-indigo-500"></div>
           </div>
+          <InfiniteMovingCards
+            items={techsIUse}
+            direction="right"
+            speed="slow"
+          />
+        </div>
 
-          <div className="h-[10rem] flex flex-col justify-center items-center">
-            <h2 className="text-white text-2xl font-bold mb-4 text-center">Tecnologías que conozco</h2>
-            <InfiniteMovingCards
-              items={techsIKnow}
-              direction="right"
-              speed="normal"
-            />
+        {/* Tecnologías que conozco */}
+        <div className="relative">
+          <div className="flex items-center justify-center gap-3 mb-6 px-4">
+            <div className="h-px w-8 md:w-12 bg-gradient-to-r from-transparent to-purple-500"></div>
+            <h3 className="text-white text-lg md:text-xl font-semibold flex items-center gap-2 whitespace-nowrap">
+              <span className="text-xl md:text-2xl">📚</span> También Conozco
+            </h3>
+            <div className="h-px w-8 md:w-12 bg-gradient-to-l from-transparent to-purple-500"></div>
           </div>
+          <InfiniteMovingCards
+            items={techsIKnow}
+            direction="left"
+            speed="normal"
+          />
         </div>
       </div>
     </div>

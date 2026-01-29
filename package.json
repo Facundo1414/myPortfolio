@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3006",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3006",
     "lint": "next lint"
   },
   "dependencies": {
@@ -19,12 +19,12 @@
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
+    "@vercel/analytics": "^1.6.1",
     "clsx": "^2.1.1",
     "emailjs": "^4.0.3",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.3.2",
     "next": "14.2.4",
-    "package.json": "^0.0.0",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",

@@ -49,10 +49,42 @@ body {
   color: #FFD700; /* Color dorado como ejemplo */
 }
 
-/* styles/globals.css */
-
+/* Dark Mode Styles */
 .dark-mode {
-  background-color: #000000; /* Ejemplo de fondo oscuro */
-  color: #fff; /* Ejemplo de texto blanco */
-  /* Añade más estilos según tu diseño */
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.dark-mode .bg-gradient-radial {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9), black);
+}
+
+/* Light Mode Styles */
+.light-mode {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.light-mode .bg-gradient-radial {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.95), #f0f0f0);
+}
+
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode p,
+.light-mode span {
+  color: #1a1a1a;
+}
+
+.light-mode .text-white {
+  color: #1a1a1a !important;
+}
+
+.light-mode .bg-black {
+  background-color: #ffffff;
+}
+
+.light-mode .border-white {
+  border-color: #e5e5e5;
 }

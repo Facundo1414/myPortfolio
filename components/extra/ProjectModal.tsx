@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Box, Typography, Grid, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -10,9 +11,22 @@ interface ProjectModalProps {
   description: string;
   images: string[];
   extraDetail: string;
+  technologies?: string[];
+  github?: string | null;
+  demo?: string | null;
 }
 
-const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, title, description, images, extraDetail }) => {
+const ProjectModal: React.FC<ProjectModalProps> = ({ 
+  isOpen, 
+  onClose, 
+  title, 
+  description, 
+  images, 
+  extraDetail,
+  technologies,
+  github,
+  demo 
+}) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleImageClick = (image: string) => {
@@ -32,7 +46,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, title, des
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '80%',
+            width: '90%',
+            maxWidth: '900px',
+            maxHeight: '90vh',
+            overflow: 'auto',
             boxShadow: 24,
             p: 4,
             borderRadius: 2,
@@ -57,24 +74,55 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, title, des
           <Typography variant="body1" mb={2} className="text-white">
             {description}
           </Typography>
-          <Typography variant="body2" mb={4} className="text-white">
+          <Typography variant="body2" mb={3} className="text-gray-300">
             {extraDetail}
           </Typography>
-          <Grid container spacing={2}>
-            {images.map((image, index) => (
-              <Grid item xs={6} sm={4} md={3} key={index} onClick={() => handleImageClick(image)}>
-                <Image
-                  src={image}
-                  alt={`Project Image ${index + 1}`}
-                  layout="responsive"
-                  width={100}
-                  height={100}
-                  objectFit="cover"
-                  className="rounded cursor-pointer"
-                />
+          
+          {technologies && technologies.length > 0 && (
+            <Box mb={3}>
+              <Typography variant="h6" className="text-white mb-2">Tecnologías:</Typography>
+              <Box className="flex flex-wrap gap-2">
+                {technologies.map((tech, idx) => (
+                  <span key={idx} className="px-3 py-1 bg-indigo-500/30 text-indigo-200 rounded-full text-sm">
+                    {tech}
+                  </span>
+                ))}
+              </Box>
+            </Box>
+          )}
+
+          <Box className="flex gap-3 mb-4">
+            {github && (
+              <Link href={github} target="_blank" className="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition">
+                Ver en GitHub
+              </Link>
+            )}
+            {demo && (
+              <Link href={demo} target="_blank" className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                Ver Demo
+              </Link>
+            )}
+          </Box>
+
+          {images.length > 0 && (
+            <>
+              <Typography variant="h6" className="text-white mb-2">Galería de imágenes:</Typography>
+              <Grid container spacing={2}>
+                {images.map((image, index) => (
+                  <Grid item xs={6} sm={4} md={3} key={index} onClick={() => handleImageClick(image)}>
+                    <Image
+                      src={image}
+                      alt={`${title} - Imagen ${index + 1}`}
+                      width={200}
+                      height={200}
+                      className="rounded cursor-pointer hover:opacity-80 transition object-cover w-full h-full"
+                      loading="lazy"
+                    />
+                  </Grid>
+                ))}
               </Grid>
-            ))}
-          </Grid>
+            </>
+          )}
         </Box>
       </Modal>
 
@@ -86,10 +134,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, title, des
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              width: '90%',
-              maxHeight: '90%',
+              width: '95%',
+              maxWidth: '1200px',
+              maxHeight: '95vh',
               boxShadow: 24,
-              p: 4,
+              p: 2,
               borderRadius: 2,
               bgcolor: 'background.paper',
             }}
@@ -99,21 +148,23 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, title, des
                 position: 'absolute',
                 top: 8,
                 right: 8,
-                color: 'black',
+                color: 'white',
+                bgcolor: 'rgba(0,0,0,0.5)',
+                '&:hover': { bgcolor: 'rgba(0,0,0,0.7)' }
               }}
               onClick={handleCloseImageModal}
             >
               <CloseIcon />
             </IconButton>
-            <Image
-              src={selectedImage}
-              alt="Enlarged Project Image"
-              layout="responsive"
-              width={1000}
-              height={1000}
-              objectFit="contain"
-              className="rounded"
-            />
+            <div className="relative w-full h-[80vh]">
+              <Image
+                src={selectedImage}
+                alt="Imagen ampliada del proyecto"
+                fill
+                className="object-contain"
+                loading="lazy"
+              />
+            </div>
           </Box>
         </Modal>
       )}
