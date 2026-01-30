@@ -32,13 +32,18 @@ export const InfiniteMovingCards = ({
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
+      
+      // Duplicar múltiples veces para asegurar que llene el ancho
+      const duplications = Math.max(3, Math.ceil(20 / scrollerContent.length));
+      
+      for (let i = 0; i < duplications; i++) {
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          if (scrollerRef.current) {
+            scrollerRef.current.appendChild(duplicatedItem);
+          }
+        });
+      }
 
       getDirection();
       getSpeed();
@@ -85,8 +90,8 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll",
+          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap justify-center",
+          start && "animate-scroll justify-start",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
