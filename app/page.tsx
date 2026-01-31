@@ -10,6 +10,8 @@ import { FloatingNav } from '@/components/ui/FloatingNavbar';
 import { MobileNav } from '@/components/ui/MobileNav';
 import { SparklesCore } from '@/components/ui/SparklesCore';
 import ClientLayout from '@/components/ClientLayout';
+import Testimonials from '@/components/Testimonials';
+import Experience from '@/components/Experience';
 import info from '../utils/info';
 
 export default function Home() {
@@ -29,8 +31,10 @@ export default function Home() {
           <div className="flex flex-col items-center justify-between gap-20 w-full py-16">
             <Statistics />
             <AboutMe />
+            <Experience />
             <Skills />
             <ProyectosGrandes />
+            <Testimonials />
             <Contact />
           </div>
           <Footer />

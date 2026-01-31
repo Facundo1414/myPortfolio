@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from '@vercel/analytics/react';
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import BlobBackground from "@/components/ui/BlobBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -96,6 +98,8 @@ export default function RootLayout({
           Saltar al contenido principal
         </a>
         <ThemeProvider>
+          <ScrollProgress />
+          <BlobBackground />
           {children}
           <Analytics />
         </ThemeProvider>

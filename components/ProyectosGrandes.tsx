@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import info from '../utils/info';
 import CardProyectComponent from './extra/CardProyectComponent';
 import { AnimatedSection } from './ui/AnimatedSection';
@@ -48,6 +49,36 @@ export const ThreeDCardDemoP: React.FC = () => {
     { key: 'todos', label: '📁 Todos' },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      }
+    },
+    exit: { 
+      opacity: 0, 
+      y: -20, 
+      scale: 0.95,
+      transition: { duration: 0.2 }
+    },
+  };
+
   return (
     <AnimatedSection>
     <div id='proyectos-section' className="w-full">
@@ -58,44 +89,74 @@ export const ThreeDCardDemoP: React.FC = () => {
         Explora mi trabajo: desde sistemas empresariales en producción hasta proyectos académicos y personales
       </p>
       
-      {/* Filtros */}
+      {/* Filtros con indicador animado */}
       <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-10 px-4">
         {filterButtons.map(({ key, label }) => (
-          <button
+          <motion.button
             key={key}
             onClick={() => setActiveFilter(key)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+            className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
               activeFilter === key
-                ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/25'
+                ? 'text-white'
                 : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white border border-gray-700'
             }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            {label}
-          </button>
+            {activeFilter === key && (
+              <motion.div
+                layoutId="activeFilterBg"
+                className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full shadow-lg shadow-indigo-500/25"
+                initial={false}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
+            )}
+            <span className="relative z-10">{label}</span>
+          </motion.button>
         ))}
       </div>
 
-      {/* Contador de proyectos */}
-      <p className="text-center text-neutral-500 text-sm mb-4">
+      {/* Contador de proyectos animado */}
+      <motion.p 
+        key={projects.length}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center text-neutral-500 text-sm mb-4"
+      >
         Mostrando {projects.length} proyecto{projects.length !== 1 ? 's' : ''}
-      </p>
+      </motion.p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-4 max-w-7xl mx-auto px-4">
-        {projects.map((project, index) => (
-          <CardProyectComponent
-            key={`${activeFilter}-${index}`}
-            title={project.title}
-            description={project.description}
-            imageUrl={project.imageUrl}
-            linkUrl={project.demo}
-            projectImages={project.projectImages}
-            extraDetail={project.extraDetail}
-            github={project.github}
-            status={project.status}
-            technologies={project.technologies}
-          />
-        ))}
-      </div>
+      {/* Grid con animaciones */}
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={activeFilter}
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-4 max-w-7xl mx-auto px-4"
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={`${activeFilter}-${project.title}-${index}`}
+              variants={itemVariants}
+              layout
+            >
+              <CardProyectComponent
+                title={project.title}
+                description={project.description}
+                imageUrl={project.imageUrl}
+                linkUrl={project.demo}
+                projectImages={project.projectImages}
+                extraDetail={project.extraDetail}
+                github={project.github}
+                status={project.status}
+                technologies={project.technologies}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
     </div>
     </AnimatedSection>
   );

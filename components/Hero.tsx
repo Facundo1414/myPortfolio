@@ -1,6 +1,7 @@
 import React from 'react'
 import { SparklesCore } from './ui/SparklesCore'
 import info from "../utils/info";
+import MagneticButton from './ui/MagneticButton';
 
 const Hero = () => {
   const { primerSubtitulo, tituloPrincipal, segundoSubitulo, btnText } = info.hero;
@@ -46,15 +47,19 @@ const Hero = () => {
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <a href="#proyectos-section" className="p-[3px] relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg group-hover:blur-sm transition-all duration-300" />
-            <div className="px-8 py-3 bg-black rounded-[6px] relative transition duration-200 text-white hover:bg-transparent font-medium">
-              {btnText} →
+          <MagneticButton href="#proyectos-section" magneticStrength={0.3}>
+            <div className="p-[3px] relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg group-hover:blur-sm transition-all duration-300" />
+              <div className="px-8 py-3 bg-black rounded-[6px] relative transition duration-200 text-white hover:bg-transparent font-medium">
+                {btnText} →
+              </div>
             </div>
-          </a>
-          <a href="#contact-section" className="px-8 py-3 rounded-lg border border-white/20 text-white hover:bg-white/10 transition-all duration-200 font-medium">
-            Contactar
-          </a>
+          </MagneticButton>
+          <MagneticButton href="#contact-section" magneticStrength={0.3}>
+            <div className="px-8 py-3 rounded-lg border border-white/20 text-white hover:bg-white/10 transition-all duration-200 font-medium">
+              Contactar
+            </div>
+          </MagneticButton>
         </div>
         
         {/* Scroll indicator */}
