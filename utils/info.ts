@@ -90,54 +90,6 @@ let info = {
   ],
 
   proyectos: {
-    borvex: {
-      title: "BORVEX",
-      description: "Software a medida, comercio digital e integraciones para empresas",
-      extraDetail:
-        "Nueva versión del sitio de BORVEX Software Studio, dedicada a presentar sus servicios de desarrollo de software, comercio digital e integraciones.",
-      demo: "https://bovex-dev.vercel.app",
-      imageUrl: "/images/proyectos/borvex-preview.png",
-      github: null,
-      status: "En Producción",
-      technologies: ["Next.js", "React", "TypeScript"],
-      projectImages: ["/images/proyectos/borvex-preview.png"],
-    },
-    aceroVeta: {
-      title: "Acero & Veta",
-      description: "Catálogo de muebles y presupuestos a medida",
-      extraDetail:
-        "Sitio en producción con catálogo administrable y un flujo para solicitar presupuestos de muebles a medida.",
-      demo: "https://acero-veta.vercel.app",
-      imageUrl: "/images/proyectos/acero-veta-preview.png",
-      github: null,
-      status: "En Producción",
-      technologies: ["Next.js", "React", "TypeScript"],
-      projectImages: ["/images/proyectos/acero-veta-preview.png"],
-    },
-    marketingEngine: {
-      title: "Marketing Engine",
-      description: "Motor editorial para generar y revisar contenido de varias marcas",
-      extraDetail:
-        "Primera fase en desarrollo: permite cargar contexto y fuentes, generar propuestas de texto y aprobarlas, editarlas o rechazarlas. Todavía no publica contenido ni tiene una demo pública.",
-      demo: null,
-      imageUrl: "/images/proyectos/marketing-engine-preview.png",
-      github: null,
-      status: "En Desarrollo",
-      technologies: ["Next.js", "React", "TypeScript", "Supabase"],
-      projectImages: ["/images/proyectos/marketing-engine-preview.png"],
-    },
-    evoTradingLab: {
-      title: "Evo Trading Lab",
-      description: "Laboratorio de investigación y validación de estrategias de trading",
-      extraDetail:
-        "Proyecto en desarrollo para estudiar datos históricos, evaluar estrategias y generar señales explicables. Su alcance inicial no ejecuta operaciones reales y todavía no ofrece una demo pública.",
-      demo: null,
-      imageUrl: "/images/proyectos/evo-trading-lab-preview.png",
-      github: null,
-      status: "En Desarrollo",
-      technologies: ["Next.js", "NestJS", "Python", "PostgreSQL"],
-      projectImages: ["/images/proyectos/evo-trading-lab-preview.png"],
-    },
     aqua: {
       title: "AQUA - Sistema de Gestión de Deudas",
       description:
@@ -164,7 +116,7 @@ let info = {
         "Plataforma de e-commerce con gestión de múltiples canales de venta",
       extraDetail:
         "E-commerce completo con sistema de stock centralizado y controlado para 3 puntos de venta: minorista, mayorista y dropshipping. Integración con Mercado Pago para procesamiento de pagos, sistema de cadetería para delivery, panel de administración completo, gestión de inventario en tiempo real y reportes de ventas. Actualmente en desarrollo para versión 2.0 (Cbavapx) con mejoras de arquitectura y funcionalidades extendidas.",
-      demo: "https://cbavapx.vercel.app",
+      demo: "https://cbavapes.vercel.app",
       imageUrl: "/images/proyectos/cbavapx.webp",
       github: "https://github.com/Facundo1414/cbavapes",
       status: "V1 Producción / V2 En Desarrollo",
@@ -183,7 +135,7 @@ let info = {
       description: "App para renta de servicios y equipos fotográficos",
       extraDetail:
         "El proyecto se llevó a cabo utilizando la metodología SCRUM a lo largo de 4 sprints, con una duración de 14 días cada uno. La aplicación fue desarrollada principalmente con Spring Boot en Java, ReactJS y Tailwind CSS, además de integrar bibliotecas como MUI. Mi rol en este proyecto fue de Fullstack Developer y Scrum Master. Lideré al equipo, asegurando que cada miembro alcanzara su máximo potencial y que las tareas se organizaran eficientemente dentro del tiempo disponible.",
-      demo: null,
+      demo: "https://rentstudio.jackmoon.dev",
       imageUrl: "/images/DH/logoRS.png",
       github: "https://github.com/orgs/1774-ProyectoIntegrador/repositories",
       status: "Completado",

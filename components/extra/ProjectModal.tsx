@@ -98,8 +98,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
               </Link>
             )}
             {demo && (
-              <Link href={demo} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-violet-400 text-slate-950 font-bold rounded-lg hover:bg-violet-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300 transition-colors">
-                Ver sitio ↗
+              <Link href={demo} target="_blank" className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                Ver Demo
               </Link>
             )}
           </Box>

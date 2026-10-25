@@ -28,6 +28,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
+    "skill-icons": "github:tandpfun/skill-icons",
     "styled-components": "^6.1.11",
     "tailwind-merge": "^2.4.0"
   },
