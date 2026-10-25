@@ -13,14 +13,21 @@ export const ThreeDCardDemoP: React.FC = () => {
 
   const allProjects = {
     destacados: [
+      info.proyectos.borvex,
+      info.proyectos.aceroVeta,
       info.proyectos.aqua,
       info.proyectos.cbavapes,
-      info.proyectos.canchasReserva,
-      info.proyectos.meetingApp,
+      info.proyectos.marketingEngine,
+      info.proyectos.evoTradingLab,
     ],
     empresariales: [
+      info.proyectos.borvex,
+      info.proyectos.aceroVeta,
       info.proyectos.aqua,
       info.proyectos.cbavapes,
+      info.proyectos.marketingEngine,
+      info.proyectos.evoTradingLab,
+      info.proyectos.meetingApp,
     ],
     academicos: [
       info.proyectos.rentstudio,
@@ -29,8 +36,12 @@ export const ThreeDCardDemoP: React.FC = () => {
       info.proyectos.springEcommerce,
     ],
     todos: [
+      info.proyectos.borvex,
+      info.proyectos.aceroVeta,
       info.proyectos.aqua,
       info.proyectos.cbavapes,
+      info.proyectos.marketingEngine,
+      info.proyectos.evoTradingLab,
       info.proyectos.canchasReserva,
       info.proyectos.meetingApp,
       info.proyectos.rentstudio,
